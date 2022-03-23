@@ -1,0 +1,3 @@
+[submodule "PowerShell/mc-omp-themes"]
+	path = PowerShell/mc-omp-themes
+	url = https://github.com/MylesWritesCode/mc-omp-themes

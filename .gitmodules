@@ -2,3 +2,4 @@
 	path = PowerShell/mc-omp-themes
 	url = git@github.com:MylesWritesCode/mc-omp-themes.git
 	update = merge
+	branch = master

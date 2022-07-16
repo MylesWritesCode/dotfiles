@@ -1,9 +1,6 @@
 "use strict";
+// mklink /H $env:APPDATA/Hyper/.hyper.js ./hyper.js
 // See https://hyper.is#cfg for all currently supported options.
-
-const CONFIG = {
-  user: "Seafoam",
-};
 
 module.exports = {
   config: {
@@ -49,8 +46,8 @@ module.exports = {
       limeGreen: "#32CD32",
       lightCoral: "#F08080",
     },
-    shell: `C:/Users/${CONFIG.user}/AppData/Local/Microsoft/WindowsApps/Microsoft.PowerShell_8wekyb3d8bbwe/pwsh.exe`,
-    shellArgs: ["-f", "-"],
+    shell: "pwsh.exe",
+    shellArgs: [],
     env: {},
     bell: false,
     copyOnSelect: false,
@@ -65,9 +62,7 @@ module.exports = {
     preserveCWD: true,
 
     // Plugins
-    hyperTabs: {
-      trafficButtons: true,
-    },
+    hyperTabs: {},
     paneNavigation: {
       debug: false,
       hotkeys: {
@@ -96,7 +91,6 @@ module.exports = {
     },
   },
   plugins: [
-    "hypercwd",
     "hyper-search",
     "hyper-broadcast",
     "hyperterm-summon",
@@ -151,4 +145,3 @@ module.exports = {
   },
 };
 //# sourceMappingURL=config-default.js.map
-

@@ -1,5 +1,5 @@
 "use strict";
-// mklink /H $env:APPDATA/Hyper/.hyper.js ./hyper.js
+// PS: New-item -ItemType SymbolicLink -Path $env:APPDATA/Hyper/.hyper.js -Target $env:USERPROFILE/Documents/windows-dotfiles/Hyper/.hyper.js
 // See https://hyper.is#cfg for all currently supported options.
 
 module.exports = {
@@ -17,7 +17,7 @@ module.exports = {
     cursorShape: "BLOCK",
     cursorBlink: true,
     foregroundColor: "#fff",
-    backgroundColor: "#000",
+    backgroundColor: "#00000033",
     selectionColor: "rgba(248,28,229,0.3)",
     borderColor: "#333",
     css: "",
@@ -56,7 +56,7 @@ module.exports = {
     macOptionSelectionMode: "vertical",
     webGLRenderer: true,
     webLinksActivationKey: "",
-    disableLigatures: false,
+    disableLigatures: true,
     disableAutoUpdates: false,
     screenReaderMode: false,
     preserveCWD: true,
@@ -64,7 +64,7 @@ module.exports = {
     // Plugins
     hyperTabs: {},
     paneNavigation: {
-      debug: false,
+      debug: true,
       hotkeys: {
         navigation: {
           up: "alt+k",
@@ -95,9 +95,9 @@ module.exports = {
     "hyper-broadcast",
     "hyperterm-summon",
     "hyper-manager",
-    "hyper-tabs-enhanced",
     "hyper-one-dark",
     "hyper-pane",
+    // "hyper-tabs-autohide",
   ],
   localPlugins: [],
   keymaps: {

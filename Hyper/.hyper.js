@@ -23,7 +23,7 @@ module.exports = {
     css: ".splitpane_divider { background: linear-gradient(to left, #e66465, #9198e5) !important; height: 1px !important; border: unset !important; }",
     termCSS: "",
     workingDirectory: "",
-    showHamburgerMenu: false,
+    showHamburgerMenu: true,
     showWindowControls: false,
     padding: "12px 14px",
     colors: {

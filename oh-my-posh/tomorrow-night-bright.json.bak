@@ -1,0 +1,217 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "Output": "",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background": "p:secondary",
+          "foreground": "p:text-secondary",
+          "leading_diamond": "<p:secondary>\u250f</>",
+          "style": "diamond",
+          "type": "os"
+        },
+        {
+          "background": "p:primary",
+          "foreground": "p:text-primary",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "folder_icon": "\uf6d7",
+            "folder_separator_icon": "<transparent> \ue0bd </>",
+            "home_icon": "\uf7db",
+            "max_depth": 1,
+            "style": "agnoster_short"
+          },
+          "style": "powerline",
+          "type": "path"
+        },
+        {
+          "background": "#6CA35E",
+          "foreground": "p:text-secondary",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "fetch_version": true
+          },
+          "style": "powerline",
+          "type": "node"
+        },
+        {
+          "background": "p:orange",
+          "foreground": "p:text-secondary",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "fetch_version": true
+          },
+          "style": "powerline",
+          "type": "rust"
+        },
+        {
+          "background": "#8ED1F7",
+          "foreground": "#111111",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "fetch_version": true
+          },
+          "style": "powerline",
+          "type": "go"
+        },
+        {
+          "background": "#4063D8",
+          "foreground": "#111111",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "fetch_version": true
+          },
+          "style": "powerline",
+          "type": "julia"
+        },
+        {
+          "background": "#FFDE57",
+          "foreground": "#111111",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "display_mode": "files",
+            "fetch_version": true,
+            "fetch_virtual_env": false
+          },
+          "style": "powerline",
+          "type": "python"
+        },
+        {
+          "background": "#AE1401",
+          "foreground": "p:text-primary",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "display_mode": "files",
+            "fetch_version": true
+          },
+          "style": "powerline",
+          "type": "ruby"
+        },
+        {
+          "background": "#FEAC19",
+          "foreground": "p:text-primary",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "display_mode": "files",
+            "fetch_version": false
+          },
+          "style": "powerline",
+          "type": "azfunc"
+        },
+        {
+          "background_templates": [
+            "{{if contains \"default\" .Profile}}#FFA400{{end}}",
+            "{{if contains \"jan\" .Profile}}#f1184c{{end}}"
+          ],
+          "foreground": "p:text-primary",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "display_default": false
+          },
+          "style": "powerline",
+          "type": "aws"
+        },
+        {
+          "background": "p:aqua",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:yellow{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:orange{{ end }}",
+            "{{ if gt .Ahead 0 }}p:blue{{ end }}",
+            "{{ if gt .Behind 0 }}p:purple{{ end }}"
+          ],
+          "foreground": "p:secondary",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "branch_max_length": 24,
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "truncate_symbol": "\u2026"
+          },
+          "style": "powerline",
+          "type": "git"
+        },
+        {
+          "background": "p:secondary",
+          "foreground": "p:text-secondary",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "style": "dallas",
+            "threshold": 0
+          },
+          "style": "powerline",
+          "type": "executiontime"
+        },
+        {
+          "background": "p:red",
+          "foreground": "p:text-secondary",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "type": "exit"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "background": "p:secondary",
+          "foreground": "p:text-secondary",
+          "leading_diamond": "\ue0c5",
+          "properties": {
+            "user_info_separator": "."
+          },
+          "style": "diamond",
+          "type": "shell"
+        },
+        {
+          "background": "p:secondary",
+          "foreground": "p:aqua",
+          "properties": {
+            "time_format": "15:04:05"
+          },
+          "style": "diamond",
+          "type": "time"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "background": "transparent",
+          "foreground": "p:text-secondary",
+          "leading_diamond": "<p:secondary>\u2516</>",
+          "style": "diamond",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "console_title_template": "{{if .Root}} \u26a1 {{end}}{{.Folder | replace \"~\" \"🏚\" }} @ {{.Host}}",
+  "palette": {
+    "aqua": "#70c0b1",
+    "background": "#000000",
+    "blue": "#7aa6da",
+    "comment": "#969896",
+    "current-line": "#2a2a2a",
+    "foreground": "#eaeaea",
+    "green": "#b9ca4a",
+    "orange": "#e78c45",
+    "primary": "p:purple",
+    "purple": "#c397d8",
+    "red": "#d54e53",
+    "secondary": "p:selection",
+    "selection": "#424242",
+    "text-primary": "p:selection",
+    "text-secondary": "p:foreground",
+    "yellow": "#e7c547"
+  },
+  "version": 1
+}

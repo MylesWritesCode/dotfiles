@@ -5,10 +5,10 @@
   "editor.minimap.enabled": false,
   "editor.bracketPairColorization.enabled": true,
   "editor.linkedEditing": true,
-  "editor.fontFamily": "'Operator Mono Lig', Consolas, monospace",
+  "editor.fontFamily": "'Operator Mono Lig', 'FiraCode Nerd Font', 'Academy Engraved LET Plain', Consolas, monospace",
   "editor.fontLigatures": true,
-  "editor.inlayHints.fontFamily": "'Operator Mono Lig', 'CaskaydiaCove Nerd Font Mono', 'Fira Code', Consolas, monospace",
-  "editor.fontWeight": "100",
+  "editor.inlayHints.fontFamily": "'Operator Mono Lig', 'FiraCode Nerd Font', Consolas, monospace",
+  "editor.fontWeight": "500",
   "editor.rulers": [
     { "column": 80, "color": "#5a5a5a30" },
     { "column": 120, "color": "#5a5a5a30" }
@@ -64,4 +64,7 @@
   "C_Cpp.clang_format_fallbackStyle": "Google",
   "C_Cpp.default.cppStandard": "c++20",
   "eslint.enable": true,
+  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init.lua",
+  "editor.lineHeight": 2.5,
 }

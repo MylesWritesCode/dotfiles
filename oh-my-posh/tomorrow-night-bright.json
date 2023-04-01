@@ -9,7 +9,7 @@
           "foreground": "p:text-secondary",
           "leading_diamond": "<p:secondary>\u250f</>",
           "style": "diamond",
-          "template": " {{ if .WSL }}WSL {{ end }}{{.Icon}} ",
+          "template": "{{ if .WSL }}{{ else }} {{end}}{{.Icon}} ",
           "type": "os"
         },
         {
@@ -183,6 +183,24 @@
         {
           "background": "p:secondary",
           "foreground": "p:aqua",
+          "style": "diamond",
+          "properties": {
+            "shell": "fish",
+            "command": "echo $fish_bind_mode"
+          },
+          "template": "<transparent>\ue0bd</> {{ .Output }} ",
+          "type": "command"
+        },
+        {
+          "background": "p:secondary",
+          "foreground": "p:aqua",
+          "style": "diamond",
+          "template": "{{ if .Env.fish_bind_mode }}<transparent>\ue0bd </> {{ .Env.fish_bind_mode }} {{ end }}",
+          "type": "text"
+        },
+        {
+          "background": "p:secondary",
+          "foreground": "p:aqua",
           "properties": {
             "time_format": "15:04:05"
           },
@@ -200,7 +218,6 @@
         {
           "background": "transparent",
           "foreground": "p:text-secondary",
-          "leading_diamond": "<p:secondary>\u2516</>",
           "style": "diamond",
           "template": " \uf054_ ",
           "type": "text"

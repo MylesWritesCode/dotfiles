@@ -4,10 +4,6 @@
     "actions": 
     [
         {
-            "command": "openTabRenamer",
-            "keys": "ctrl+shift+r"
-        },
-        {
             "command": 
             {
                 "action": "splitPane",
@@ -15,6 +11,10 @@
                 "splitMode": "duplicate"
             },
             "keys": "ctrl+shift+minus"
+        },
+        {
+            "command": "openTabRenamer",
+            "keys": "ctrl+shift+r"
         },
         {
             "command": 
@@ -48,17 +48,17 @@
         {
             "command": 
             {
-                "action": "closeTab"
-            },
-            "keys": "ctrl+shift+w"
-        },
-        {
-            "command": 
-            {
                 "action": "moveFocus",
                 "direction": "right"
             },
             "keys": "alt+l"
+        },
+        {
+            "command": 
+            {
+                "action": "closeTab"
+            },
+            "keys": "ctrl+shift+w"
         },
         {
             "command": 
@@ -123,6 +123,16 @@
                 "hidden": true,
                 "name": "Ubuntu",
                 "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "Command Prompt"
             }
         ]
     },

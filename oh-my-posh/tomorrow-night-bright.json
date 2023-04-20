@@ -183,24 +183,6 @@
         {
           "background": "p:secondary",
           "foreground": "p:aqua",
-          "style": "diamond",
-          "properties": {
-            "shell": "fish",
-            "command": "echo $fish_bind_mode"
-          },
-          "template": "<transparent>\ue0bd</> {{ .Output }} ",
-          "type": "command"
-        },
-        {
-          "background": "p:secondary",
-          "foreground": "p:aqua",
-          "style": "diamond",
-          "template": "{{ if .Env.fish_bind_mode }}<transparent>\ue0bd </> {{ .Env.fish_bind_mode }} {{ end }}",
-          "type": "text"
-        },
-        {
-          "background": "p:secondary",
-          "foreground": "p:aqua",
           "properties": {
             "time_format": "15:04:05"
           },

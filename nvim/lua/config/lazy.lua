@@ -5,13 +5,10 @@ if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
 end
 
--- Uncomment this and add the path of your local packpath within windows-dotfiles
--- local packpath = "/Users/mberueda/dev/windows-dotfiles/nvim/pack"
-local packpath = "C:/Users/Myles/windows-dotfiles/nvim/pack"
-
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
-vim.opt.rtp:append(vim.fn.stdpath "config" .. "/nvim/pack/after")
 
+local packpath = os.getenv("NVIM_PACK_PATH")
+vim.opt.rtp:append(packpath or "C:/Users/Myles/windows-dotfiles/nvim/lua/pack") -- Doesn't seem to add to runtimepath for some reason
 
 if not vim.g.vscode then
   require("lazy").setup({
@@ -21,7 +18,7 @@ if not vim.g.vscode then
     },
     defaults = {
       lazy = false,
-      version = false, 
+      version = false,
     },
     install = { colorscheme = { "tokyonight", "habamax" } },
     checker = { enabled = true }, -- automatically check for plugin updates
@@ -41,10 +38,11 @@ if not vim.g.vscode then
     },
   })
 else
+  -- This works, but something else is causing color to be transffered to VSCode for some unknown reason.
   require("lazy").setup({
     spec = {
-      { 
-        "LazyVim/LazyVim", 
+      {
+        "LazyVim/LazyVim",
         opts = {
           colorscheme = function() end,
           editor = function() end,
@@ -52,9 +50,9 @@ else
           treesitter = function() end,
           ui = function() end,
         },
-        priority = 1000
+        priority = 1000,
       },
-      { import = "plugins" }
+      { import = "plugins" },
     },
     defaults = {
       lazy = false,

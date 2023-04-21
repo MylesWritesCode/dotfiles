@@ -2,6 +2,6 @@
 	path = PowerShell/mc-omp-themes
 	url = git@github.com:MylesWritesCode/mc-omp-themes.git
 	branch = master
-[submodule "nvim/lua/pack/mini.nvim"]
-	path = nvim/lua/pack/mini.nvim
+[submodule "nvim/lua/pack/mini"]
+	path = nvim/lua/pack/mini
 	url = git@github.com:echasnovski/mini.nvim.git

@@ -1,6 +1,6 @@
 if vim.g.vscode then
     return {
-        { "folke/tokyonight.nvim", enabled = false, }, 
+        { "goolord/alpha-nvim", enabled = false }
     }
 else
     return {}

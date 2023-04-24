@@ -7,70 +7,55 @@ end
 
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
-local packpath = os.getenv("NVIM_PACK_PATH")
-vim.opt.rtp:append(packpath or "C:/Users/Myles/windows-dotfiles/nvim/lua/pack") -- Doesn't seem to add to runtimepath for some reason
-
-if not vim.g.vscode then
-  require("lazy").setup({
-    spec = {
-      { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-      { import = "plugins" },
-    },
-    defaults = {
-      lazy = false,
-      version = false,
-    },
-    install = { colorscheme = { "tokyonight", "habamax" } },
-    checker = { enabled = true }, -- automatically check for plugin updates
-    performance = {
-      rtp = {
-        disabled_plugins = {
-          "gzip",
-          -- "matchit",
-          -- "matchparen",
-          -- "netrwPlugin",
-          "tarPlugin",
-          "tohtml",
-          "tutor",
-          "zipPlugin",
+if vim.g.vscode then
+    require("lazy").setup({
+        spec = {
+            { import = "plugins" },
         },
-      },
-    },
-  })
+        defaults = {
+            lazy = false,
+            version = false,
+        },
+        performance = {
+            rtp = {
+                disabled_plugins = {
+                    "gzip",
+                    "matchit",
+                    "matchparen",
+                    "netrwPlugin",
+                    "tarPlugin",
+                    "tohtml",
+                    "tutor",
+                    "zipPlugin",
+                },
+            },
+        },
+    })
 else
-  -- This works, but something else is causing color to be transffered to VSCode for some unknown reason.
-  require("lazy").setup({
-    spec = {
-      {
-        "LazyVim/LazyVim",
-        opts = {
-          colorscheme = function() end,
-          editor = function() end,
-          lsp = function() end,
-          treesitter = function() end,
-          ui = function() end,
+    require("lazy").setup({
+        spec = {
+            { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+            { import = "plugins" },
         },
-        priority = 1000,
-      },
-      { import = "plugins" },
-    },
-    defaults = {
-      lazy = false,
-      version = false,
-    },
-    performance = {
-      rtp = {
-        disabled_plugins = {
-          "gzip",
-          -- "matchit",
-          -- "matchparen",
-          -- "netrwPlugin",
-          "tarPlugin",
-          "tohtml",
-          "tutor",
-          "zipPlugin",
+        defaults = {
+            lazy = false,
+            version = false,
         },
-      },
-    },
-  })
+        install = { colorscheme = { "tokyonight" } },
+        checker = { enabled = true }, -- automatically check for plugin updates
+        performance = {
+            rtp = {
+                disabled_plugins = {
+                    "gzip",
+                    -- "matchit",
+                    -- "matchparen",
+                    -- "netrwPlugin",
+                    "tarPlugin",
+                    "tohtml",
+                    "tutor",
+                    "zipPlugin",
+                },
+            },
+        },
+    })
 end

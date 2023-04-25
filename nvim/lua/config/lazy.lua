@@ -7,31 +7,32 @@ end
 
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
-if vim.g.vscode then
-    require("lazy").setup({
-        spec = {
-            { import = "plugins" },
-        },
-        defaults = {
-            lazy = false,
-            version = false,
-        },
-        performance = {
-            rtp = {
-                disabled_plugins = {
-                    "gzip",
-                    "matchit",
-                    "matchparen",
-                    "netrwPlugin",
-                    "tarPlugin",
-                    "tohtml",
-                    "tutor",
-                    "zipPlugin",
-                },
-            },
-        },
-    })
-else
+-- if vim.g.vscode then
+--     require("lazy").setup({
+--         spec = {
+--             { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+--             { import = "plugins" },
+--         },
+--         defaults = {
+--             lazy = false,
+--             version = false,
+--         },
+--         performance = {
+--             rtp = {
+--                 disabled_plugins = {
+--                     "gzip",
+--                     "matchit",
+--                     "matchparen",
+--                     "netrwPlugin",
+--                     "tarPlugin",
+--                     "tohtml",
+--                     "tutor",
+--                     "zipPlugin",
+--                 },
+--             },
+--         },
+--     })
+-- else
     require("lazy").setup({
         spec = {
             { "LazyVim/LazyVim", import = "lazyvim.plugins" },
@@ -58,4 +59,4 @@ else
             },
         },
     })
-end
+-- end

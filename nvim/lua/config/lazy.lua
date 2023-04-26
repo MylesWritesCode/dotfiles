@@ -7,56 +7,29 @@ end
 
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
--- if vim.g.vscode then
---     require("lazy").setup({
---         spec = {
---             { "LazyVim/LazyVim", import = "lazyvim.plugins" },
---             { import = "plugins" },
---         },
---         defaults = {
---             lazy = false,
---             version = false,
---         },
---         performance = {
---             rtp = {
---                 disabled_plugins = {
---                     "gzip",
---                     "matchit",
---                     "matchparen",
---                     "netrwPlugin",
---                     "tarPlugin",
---                     "tohtml",
---                     "tutor",
---                     "zipPlugin",
---                 },
---             },
---         },
---     })
--- else
-    require("lazy").setup({
-        spec = {
-            { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-            { import = "plugins" },
-        },
-        defaults = {
-            lazy = false,
-            version = false,
-        },
-        install = { colorscheme = { "tokyonight" } },
-        checker = { enabled = true }, -- automatically check for plugin updates
-        performance = {
-            rtp = {
-                disabled_plugins = {
-                    "gzip",
-                    -- "matchit",
-                    -- "matchparen",
-                    -- "netrwPlugin",
-                    "tarPlugin",
-                    "tohtml",
-                    "tutor",
-                    "zipPlugin",
-                },
-            },
-        },
-    })
--- end
+require("lazy").setup({
+  spec = {
+    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { import = "plugins" },
+  },
+  defaults = {
+    lazy = false,
+    version = false,
+  },
+  install = { colorscheme = { "tokyonight" } },
+  checker = { enabled = true }, -- automatically check for plugin updates
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        -- "matchit",
+        -- "matchparen",
+        -- "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    },
+  },
+})

@@ -317,7 +317,7 @@ copy_on_select true
 
 // The folder in which Zellij will look for layouts
 //
-layout_dir "/home/myles/.config/zellij/layout"
+layout_dir "$HOME/.config/zellij/layout"
 
 // The folder in which Zellij will look for themes
 //

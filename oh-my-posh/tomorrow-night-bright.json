@@ -201,13 +201,18 @@
           "background": "transparent",
           "foreground": "p:text-secondary",
           "style": "diamond",
-          "template": " \uf054_ ",
+          "template": "\uf054_ ",
           "type": "text"
         }
       ],
       "type": "prompt"
     }
   ],
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "#FEF5ED",
+    "template": "\uf054_ "
+  },
   "console_title_template": "{{if .Root}} \u26a1 {{end}}{{.Folder | replace \"~\" \"🏚\" }} @ {{.Host}}",
   "palette": {
     "aqua": "#70c0b1",

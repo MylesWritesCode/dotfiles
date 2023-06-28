@@ -28,7 +28,7 @@ return {
     },
     keys = {
       { "<c-space>", desc = "Increment selection" },
-      { "<bs>", desc = "Decrement selection", mode = "x" },
+      { "<bs>",      desc = "Decrement selection", mode = "x" },
     },
     ---@type TSConfig
     opts = {
@@ -37,22 +37,20 @@ return {
       context_commentstring = { enable = true, enable_autocmd = false },
       ensure_installed = {
         "bash",
-        "c",
-        "html",
+        "go",
         "javascript",
         "json",
         "lua",
         "luadoc",
-        "luap",
-        "markdown",
         "markdown_inline",
+        "markdown",
         "python",
         "query",
         "regex",
+        "rust",
         "tsx",
         "typescript",
         "vim",
-        "vimdoc",
         "yaml",
       },
       incremental_selection = {

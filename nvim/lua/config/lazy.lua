@@ -10,6 +10,7 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 require("lazy").setup({
   spec = {
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    -- { import = "lazyvim.plugins.extras.vscode" },  -- Messes up leap highlighting
     { import = "plugins" },
   },
   defaults = {
@@ -17,7 +18,7 @@ require("lazy").setup({
     version = false,
   },
   install = { colorscheme = { "tokyonight" } },
-  checker = { enabled = true }, -- automatically check for plugin updates
+  checker = { enabled = false }, -- automatically check for plugin updates
   performance = {
     rtp = {
       disabled_plugins = {

@@ -3,3 +3,5 @@ if vim.g.vscode then
         { "folke/neodev.nvim", enabled = false }
     }
 end
+
+return {}

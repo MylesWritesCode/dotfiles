@@ -3,3 +3,5 @@ if vim.g.vscode then
         { "goolord/alpha-nvim", enabled = false }
     }
 end
+
+return {}

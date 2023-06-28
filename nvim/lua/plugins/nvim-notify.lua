@@ -3,3 +3,5 @@ if vim.g.vscode then
         { "rcarriga/nvim-notify", enabled = false }
     }
 end
+
+return {}

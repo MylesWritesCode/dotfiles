@@ -3,3 +3,5 @@ if vim.g.vscode then
         { "jose-elias-alvarez/null-ls.nvim", enabled = false }
     }
 end
+
+return {}

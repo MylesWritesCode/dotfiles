@@ -3,3 +3,5 @@ if vim.g.vscode then
         { "stevearc/dressing.nvim", enabled = false }
     }
 end
+
+return {}

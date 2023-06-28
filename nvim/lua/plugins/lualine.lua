@@ -3,3 +3,5 @@ if vim.g.vscode then
         { "nvim-lualine/lualine.nvim", enabled = false }
     }
 end
+
+return {}

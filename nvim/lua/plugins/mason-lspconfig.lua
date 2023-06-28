@@ -3,3 +3,5 @@ if vim.g.vscode then
         { "williamboman/mason-lspconfig.nvim", enabled = false }
     }
 end
+
+return {}

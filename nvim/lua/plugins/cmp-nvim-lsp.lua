@@ -6,3 +6,5 @@ if vim.g.vscode then
         { "saadparwaiz1/cmp_luasnip", enabled = false },
     }
 end
+
+return {}

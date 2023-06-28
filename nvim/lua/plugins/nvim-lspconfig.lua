@@ -3,3 +3,5 @@ if vim.g.vscode then
         { "neovim/nvim-lspconfig", enabled = false, }
     }
 end
+
+return {}

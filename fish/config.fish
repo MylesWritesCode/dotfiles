@@ -2,7 +2,6 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-starship init fish | source
 # oh-my-posh init fish --config ~/.config/oh-my-posh/tomorrow-night-bright.json | source
 
 # pnpm
@@ -11,3 +10,6 @@ if not string match -q -- $PNPM_HOME $PATH
     set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+
+starship init fish | source
+# starship preset nerd-font-symbols -o ~/.config/starship/starship.toml

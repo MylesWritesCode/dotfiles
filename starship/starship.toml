@@ -1,12 +1,14 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-$all\
-$character
+$all
 """
 
 [aws]
-symbol = "  "
+symbol = ""
+format = "on [$symbol($profile )(\\($region\\) )(\\[$duration\\] )]($style)"
+disabled = true
+style = "bold yellow"
 
 [buf]
 symbol = " "
@@ -62,7 +64,11 @@ staged = "+"
 stashed = "\\$"
 untracked = "?"
 
+[gcloud]
+disabled = true
+
 [golang]
+format = "[$symbol($version )]($style)"
 symbol = " "
 
 [guix_shell]
@@ -102,6 +108,7 @@ symbol = "󰆥 "
 symbol = " "
 
 [nodejs]
+format = "[$symbol($version )]($style)"
 symbol = " "
 
 [os.symbols]

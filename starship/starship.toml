@@ -1,7 +1,8 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-$all
+$all\
+$character\
 """
 
 [aws]

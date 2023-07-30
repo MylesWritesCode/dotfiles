@@ -12,9 +12,8 @@ layout {
         pane
         floating_panes {
             pane {
-                x "5%"
-                width "90%"
-                height "50%"
+              x "4%"
+              width "90%"
             }
         }
     }
@@ -23,9 +22,8 @@ layout {
         pane
         floating_panes {
             pane {
-                x "5%"
-                width "90%"
-                height "50%"
+              x "4%"
+              width "90%"
             }
         }
     }

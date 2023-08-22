@@ -10,7 +10,7 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 require("lazy").setup({
   spec = {
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    -- { import = "lazyvim.plugins.extras.vscode" },  -- Messes up leap highlighting
+    { import = "lazyvim.plugins.extras.vscode" }, -- Messes up leap highlighting
     { import = "plugins" },
   },
   defaults = {

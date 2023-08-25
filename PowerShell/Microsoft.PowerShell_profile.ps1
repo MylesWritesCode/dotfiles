@@ -1,5 +1,7 @@
-oh-my-posh init pwsh --config ~\windows-dotfiles\oh-my-posh\tomorrow-night-bright.json | Invoke-Expression
+# oh-my-posh init pwsh --config ~\windows-dotfiles\oh-my-posh\tomorrow-night-bright.json | Invoke-Expression
 
+Invoke-Expression (&starship init powershell)
+$ENV:STARSHIP_CONFIG = "$HOME/windows-dotfiles/starship/starship.toml"
 
 # Import the Chocolatey Profile that contains the necessary code to enable
 # tab-completions to function for `choco`.

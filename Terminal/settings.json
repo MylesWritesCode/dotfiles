@@ -4,10 +4,6 @@
     "actions": 
     [
         {
-            "command": "openTabRenamer",
-            "keys": "ctrl+shift+r"
-        },
-        {
             "command": 
             {
                 "action": "splitPane",
@@ -15,6 +11,10 @@
                 "splitMode": "duplicate"
             },
             "keys": "ctrl+shift+minus"
+        },
+        {
+            "command": "openTabRenamer",
+            "keys": "ctrl+shift+r"
         },
         {
             "command": 

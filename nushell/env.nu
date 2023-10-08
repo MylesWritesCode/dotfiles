@@ -75,5 +75,14 @@ $env.NU_PLUGIN_DIRS = [
 ]
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
-$env.PATH = ($env.PATH | split row (char esep) | prepend '/Users/melllbby/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/Users/melllbby/.cargo/bin')
+# $env.PATH = ($env.PATH | split row (char esep) | prepend 'add PATH here')
+$env.PATH = (
+  $env.PATH
+  | split row (char esep)
+  | prepend "/nix/var/nix/profiles/default/bin"
+  | prepend $"($env.HOME)/.cargo/bin"
+  | prepend $"($env.HOME)/.nix-profile/bin"
+)
+
+$env.EDITOR = "nvim"
 

@@ -2,6 +2,8 @@
 #
 # version = "0.85.0"
 
+$env.NU_CONFIG_DIR = ~/dev/dotfiles/nushell
+
 def create_left_prompt [] {
     let home =  $nu.home-path
 

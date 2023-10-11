@@ -79,7 +79,4 @@ if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
 fi
 # End Nix
 
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-
-eval "$(starship init zsh)"
-
+export NU_CONFIG_PATH="$HOME/.config/nushell"

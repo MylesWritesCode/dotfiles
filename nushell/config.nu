@@ -765,3 +765,6 @@ $env.config = {
 
 use /Users/melllbby/dev/dotfiles/starship/init-darwin.nu
 
+# source-env ~/.config/nushell/env.nu
+
+

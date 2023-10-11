@@ -2,8 +2,6 @@
 #
 # version = "0.85.0"
 
-$env.NU_CONFIG_DIR = ~/dev/dotfiles/nushell
-
 def create_left_prompt [] {
     let home =  $nu.home-path
 
@@ -75,6 +73,8 @@ $env.NU_PLUGIN_DIRS = [
     # FIXME: This default is not implemented in rust code as of 2023-09-06.
     ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
 ]
+
+$env.STARSHIP_CONFIG = "~/.config/starship/starship.toml"
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend 'add PATH here')

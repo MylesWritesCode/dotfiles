@@ -1,6 +1,10 @@
 # Nushell Config File
 #
 # version = "0.85.0"
+#
+# IMPORTANT Need to symlink this to the proper spot on the os, so that they 
+#           can be shared across platforms. Looks like multi-platform for nu
+#           still kinda sucks though.
 
 # For more information on defining custom themes, see
 # https://www.nushell.sh/book/coloring_and_theming.html
@@ -763,8 +767,10 @@ $env.config = {
     ]
 }
 
-use /Users/melllbby/dev/dotfiles/starship/init-darwin.nu
+# Windows (Cygwin)
+if ((uname -o) == "Cygwin") {
+  use ~/.config/starship/init.nu
+}
 
-# source-env ~/.config/nushell/env.nu
-
+# use /Users/melllbby/dev/dotfiles/starship/init-darwin.nu
 

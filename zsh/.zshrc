@@ -80,3 +80,5 @@ fi
 # End Nix
 
 export NU_CONFIG_PATH="$HOME/.config/nushell"
+export PATH=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$PATH
+

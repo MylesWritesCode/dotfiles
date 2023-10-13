@@ -74,7 +74,9 @@ $env.NU_PLUGIN_DIRS = [
     ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
 ]
 
-# To add entries to PATH (on Windows you might use Path), you can use the following pattern:
+if ((uname -o) == "Darwin") {
+  $env.PNPM_HOME = $"($env.HOME)/Library/pnpm"
+}
 
 if ((uname -o) == "Cygwin") {
 # Windows
@@ -91,8 +93,11 @@ if ((uname -o) == "Cygwin") {
     | prepend "/nix/var/nix/profiles/default/bin"
     | prepend $"($env.HOME)/.cargo/bin"
     | prepend $"($env.HOME)/.nix-profile/bin"
+    | prepend $env.PNPM_HOME
+    | prepend "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
   )
 }
+
 
 $env.EDITOR = "nvim"
 

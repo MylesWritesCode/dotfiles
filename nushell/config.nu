@@ -767,10 +767,6 @@ $env.config = {
     ]
 }
 
-# Windows (Cygwin)
-if ((uname -o) == "Cygwin") {
-  use ~/.config/starship/init.nu
-}
-
-# use /Users/melllbby/dev/dotfiles/starship/init-darwin.nu
+# Make sure to init starship with `starship init nu | save -f init.nu` in the folder
+use ~/.config/starship/init.nu
 

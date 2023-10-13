@@ -1,6 +1,6 @@
 if vim.g.vscode then
   return {
-    { "folke/noice.nvim", enabled = false }
+    { "folke/noice.nvim", enabled = false },
   }
 else
   return {
@@ -85,6 +85,6 @@ else
             "i", "n", "s" }
         },
       },
-    }
+    },
   }
 end

@@ -3,11 +3,11 @@
 # - module which can be used with `use starship.nu`
 # - script which can be used with `source starship.nu`
 export-env { load-env {
-    STARSHIP_CONFIG: "/Users/mberueda/.config/starship/starship.toml"
+    STARSHIP_CONFIG: "C:\\Users\\Myles\\windows-dotfiles\\starship\\starship.toml"
     STARSHIP_SHELL: "nu"
     STARSHIP_SESSION_KEY: (random chars -l 16)
     PROMPT_MULTILINE_INDICATOR: (
-        ^/Users/mberueda/.nix-profile/bin/starship prompt --continuation
+        ^'C:\Program Files\starship\bin\starship.exe' prompt --continuation
     )
 
     # Does not play well with default character module.
@@ -17,7 +17,7 @@ export-env { load-env {
     PROMPT_COMMAND: {||
         # jobs are not supported
         (
-            ^/Users/mberueda/.nix-profile/bin/starship prompt
+            ^'C:\Program Files\starship\bin\starship.exe' prompt
                 --cmd-duration $env.CMD_DURATION_MS
                 $"--status=($env.LAST_EXIT_CODE)"
                 --terminal-width (term size).columns
@@ -30,7 +30,7 @@ export-env { load-env {
 
     PROMPT_COMMAND_RIGHT: {||
         (
-            ^/Users/mberueda/.nix-profile/bin/starship prompt
+            ^'C:\Program Files\starship\bin\starship.exe' prompt
                 --right
                 --cmd-duration $env.CMD_DURATION_MS
                 $"--status=($env.LAST_EXIT_CODE)"
@@ -38,3 +38,4 @@ export-env { load-env {
         )
     }
 }}
+

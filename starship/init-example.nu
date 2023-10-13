@@ -1,7 +1,4 @@
-# this file is both a valid
-# - overlay which can be loaded with `overlay use starship.nu`
-# - module which can be used with `use starship.nu`
-# - script which can be used with `source starship.nu`
+# Run starship init nu | save -f init.nu to generate
 export-env { load-env {
     STARSHIP_CONFIG: "/Users/melllbby/dev/dotfiles/starship/starship.toml"
     STARSHIP_SHELL: "nu"

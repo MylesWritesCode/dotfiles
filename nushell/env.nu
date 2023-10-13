@@ -74,11 +74,12 @@ $env.NU_PLUGIN_DIRS = [
     ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
 ]
 
-if ((uname -o) == "Darwin") {
+if (sys).host.name == "Darwin" {
   $env.PNPM_HOME = $"($env.HOME)/Library/pnpm"
 }
 
-if ((uname -o) == "Cygwin") {
+# Should probably change this to sys
+if (uname -o) == "Cygwin" {
 # Windows
   $env.PATH = (
     $env.Path

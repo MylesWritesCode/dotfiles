@@ -79,7 +79,7 @@ if (sys).host.name == "Darwin" {
 }
 
 # Should probably change this to sys
-if (uname -o) == "Cygwin" {
+if (sys).host.name == "Cygwin" {
 # Windows
   $env.PATH = (
     $env.Path

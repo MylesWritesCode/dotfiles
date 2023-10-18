@@ -102,3 +102,7 @@ if (sys).host.name == "Cygwin" {
 
 $env.EDITOR = "nvim"
 
+if "local/env.nu" | path exists {
+  source local/env.nu
+}
+

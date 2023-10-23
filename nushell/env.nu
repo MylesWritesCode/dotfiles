@@ -79,7 +79,7 @@ if (sys).host.name == "Darwin" {
 }
 
 # Should probably change this to sys
-if (sys).host.name == "Cygwin" {
+if (sys).host.name == "Windows" {
 # Windows
   $env.PATH = (
     $env.Path
@@ -99,10 +99,6 @@ if (sys).host.name == "Cygwin" {
   )
 }
 
-
 $env.EDITOR = "nvim"
 
-if "local/env.nu" | path exists {
-  source local/env.nu
-}
-
+source "~/.config/nushell/local/env.nu"  # Make sure this file is always there, can be empty

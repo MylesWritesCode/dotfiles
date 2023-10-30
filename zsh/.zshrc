@@ -82,3 +82,11 @@ fi
 export NU_CONFIG_PATH="$HOME/.config/nushell"
 export PATH=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$PATH
 
+
+# pnpm
+export PNPM_HOME="/Users/melllbby/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

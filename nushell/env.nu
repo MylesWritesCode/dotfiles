@@ -91,10 +91,10 @@ if (sys).host.name == "Windows" {
   $env.PATH = (
     $env.PATH
     | split row (char esep)
+    | prepend $env.PNPM_HOME
     | prepend "/nix/var/nix/profiles/default/bin"
     | prepend $"($env.HOME)/.cargo/bin"
     | prepend $"($env.HOME)/.nix-profile/bin"
-    | prepend $env.PNPM_HOME
     | prepend "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
   )
 }
@@ -102,3 +102,4 @@ if (sys).host.name == "Windows" {
 $env.EDITOR = "nvim"
 
 source "~/.config/nushell/local/env.nu"  # Make sure this file is always there, can be empty
+

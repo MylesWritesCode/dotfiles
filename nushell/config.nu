@@ -154,7 +154,8 @@ $env.config = {
         always_trash: false # always act as if -t was given. Can be overridden with -p
     }
 
-    cd: {
+    cd: { 
+        
     }
 
     table: {

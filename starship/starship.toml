@@ -36,6 +36,8 @@ style = "fg:#c397d8 bold"
 
 [docker_context]
 symbol = " "
+disabled = true
+
 
 [elixir]
 symbol = " "

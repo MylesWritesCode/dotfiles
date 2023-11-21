@@ -64,7 +64,7 @@ $env.ENV_CONVERSIONS = {
 
 # Directories to search for scripts when calling source or use
 $env.NU_LIB_DIRS = [
-    ... $nu.default-config-dir,
+    ($nu.default-config-dir | path join 'completions'),
     # FIXME: This default is not implemented in rust code as of 2023-09-06.
     ($nu.default-config-dir | path join 'scripts') # add <nushell-config-dir>/scripts
 ]
@@ -73,6 +73,7 @@ $env.NU_LIB_DIRS = [
 $env.NU_PLUGIN_DIRS = [
     # FIXME: This default is not implemented in rust code as of 2023-09-06.
     ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
+    ($nu.default-config-dir | path join 'completions') # add <nushell-config-dir>/plugins
 ]
 
 if (sys).host.name == "Darwin" {

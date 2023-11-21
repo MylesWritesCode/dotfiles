@@ -765,4 +765,4 @@ $env.config = {
 # Make sure to init starship with `starship init nu | save -f init.nu` in the folder
 use ~/.config/starship/init.nu
 
-use completions/git.nu *
+use ~/.config/nushell/completions/git.nu *

@@ -1,23 +1,11 @@
-if vim.g.vscode then
-  return {
-    { "williamboman/mason-lspconfig.nvim", enabled = false },
-  }
-end
-
 return {
   "neovim/nvim-lspconfig",
-  event = { "BufReadPre", "BufNewFile" },
+  event = "LazyFile",
   dependencies = {
     { "folke/neoconf.nvim", cmd = "Neoconf", config = false, dependencies = { "nvim-lspconfig" } },
     { "folke/neodev.nvim", opts = {} },
     "mason.nvim",
     "williamboman/mason-lspconfig.nvim",
-    {
-      "hrsh7th/cmp-nvim-lsp",
-      cond = function()
-        return require("lazyvim.util").has("nvim-cmp")
-      end,
-    },
   },
   ---@class PluginLspOpts
   opts = {
@@ -34,6 +22,14 @@ return {
         -- prefix = "icons",
       },
       severity_sort = true,
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = require("lazyvim.config").icons.diagnostics.Error,
+          [vim.diagnostic.severity.WARN] = require("lazyvim.config").icons.diagnostics.Warn,
+          [vim.diagnostic.severity.HINT] = require("lazyvim.config").icons.diagnostics.Hint,
+          [vim.diagnostic.severity.INFO] = require("lazyvim.config").icons.diagnostics.Info,
+        },
+      },
     },
     -- Enable this to enable the builtin LSP inlay hints on Neovim >= 0.10.0
     -- Be aware that you also will need to properly configure your LSP server to
@@ -41,13 +37,14 @@ return {
     inlay_hints = {
       enabled = false,
     },
+    -- Enable this to enable the builtin LSP code lenses on Neovim >= 0.10.0
+    -- Be aware that you also will need to properly configure your LSP server to
+    -- provide the code lenses.
+    codelens = {
+      enabled = false,
+    },
     -- add any global capabilities here
     capabilities = {},
-    -- Automatically format on save
-    autoformat = true,
-    -- Enable this to show formatters used in a notification
-    -- Useful for debugging formatter issues
-    format_notify = false,
     -- options for vim.lsp.buf.format
     -- `bufnr` and `filter` is handled by the LazyVim formatter,
     -- but can be also overridden when specified
@@ -58,18 +55,19 @@ return {
     -- LSP Server Settings
     ---@type lspconfig.options
     servers = {
-      rust_analyzer = {},
-      jsonls = {},
       lua_ls = {
         -- mason = false, -- set to false if you don't want this server to be installed with mason
         -- Use this to add any additional keymaps
         -- for specific lsp servers
-        ---@type LazyKeys[]
+        ---@type LazyKeysSpec[]
         -- keys = {},
         settings = {
           Lua = {
             workspace = {
               checkThirdParty = false,
+            },
+            codeLens = {
+              enable = true,
             },
             completion = {
               callSnippet = "Replace",
@@ -93,16 +91,22 @@ return {
   },
   ---@param opts PluginLspOpts
   config = function(_, opts)
-    local Util = require("lazyvim.util")
-
     if Util.has("neoconf.nvim") then
       local plugin = require("lazy.core.config").spec.plugins["neoconf.nvim"]
       require("neoconf").setup(require("lazy.core.plugin").values(plugin, "opts", false))
     end
+
     -- setup autoformat
-    require("lazyvim.plugins.lsp.format").setup(opts)
-    -- setup formatting and keymaps
-    Util.on_attach(function(client, buffer)
+    Util.format.register(Util.lsp.formatter())
+
+    -- deprecated options
+    if opts.autoformat ~= nil then
+      vim.g.autoformat = opts.autoformat
+      Util.deprecate("nvim-lspconfig.opts.autoformat", "vim.g.autoformat")
+    end
+
+    -- setup keymaps
+    Util.lsp.on_attach(function(client, buffer)
       require("lazyvim.plugins.lsp.keymaps").on_attach(client, buffer)
     end)
 
@@ -124,12 +128,25 @@ return {
       vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
     end
 
-    local inlay_hint = vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint
-
-    if opts.inlay_hints.enabled and inlay_hint then
-      Util.on_attach(function(client, buffer)
+    -- inlay hints
+    if opts.inlay_hints.enabled then
+      Util.lsp.on_attach(function(client, buffer)
         if client.supports_method("textDocument/inlayHint") then
-          inlay_hint(buffer, true)
+          Util.toggle.inlay_hints(buffer, true)
+        end
+      end)
+    end
+
+    -- code lens
+    if opts.codelens.enabled and vim.lsp.codelens then
+      Util.lsp.on_attach(function(client, buffer)
+        if client.supports_method("textDocument/codeLens") then
+          vim.lsp.codelens.refresh()
+          --- autocmd BufEnter,CursorHold,InsertLeave <buffer> lua vim.lsp.codelens.refresh()
+          vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
+            buffer = buffer,
+            callback = vim.lsp.codelens.refresh,
+          })
         end
       end)
     end
@@ -175,7 +192,7 @@ return {
       require("lspconfig")[server].setup(server_opts)
     end
 
-    -- get all the servers that are available thourgh mason-lspconfig
+    -- get all the servers that are available through mason-lspconfig
     local have_mason, mlsp = pcall(require, "mason-lspconfig")
     local all_mslp_servers = {}
     if have_mason then
@@ -189,7 +206,7 @@ return {
         -- run manual setup if mason=false or if this is a server that cannot be installed with mason-lspconfig
         if server_opts.mason == false or not vim.tbl_contains(all_mslp_servers, server) then
           setup(server)
-        else
+        elseif server_opts.enabled ~= false then
           ensure_installed[#ensure_installed + 1] = server
         end
       end
@@ -199,10 +216,10 @@ return {
       mlsp.setup({ ensure_installed = ensure_installed, handlers = { setup } })
     end
 
-    if Util.lsp_get_config("denols") and Util.lsp_get_config("tsserver") then
+    if Util.lsp.get_config("denols") and Util.lsp.get_config("tsserver") then
       local is_deno = require("lspconfig.util").root_pattern("deno.json", "deno.jsonc")
-      Util.lsp_disable("tsserver", is_deno)
-      Util.lsp_disable("denols", function(root_dir)
+      Util.lsp.disable("tsserver", is_deno)
+      Util.lsp.disable("denols", function(root_dir)
         return not is_deno(root_dir)
       end)
     end

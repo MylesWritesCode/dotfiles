@@ -762,6 +762,8 @@ $env.config = {
     ]
 }
 
+alias lse = eza
+
 # Make sure to init starship with `starship init nu | save -f init.nu` in the folder
 use ~/.config/starship/init.nu
 

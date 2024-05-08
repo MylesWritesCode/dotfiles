@@ -3,13 +3,11 @@ return {
   cmd = "Mason",
   keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
   build = ":MasonUpdate",
-  opts = {
-    ensure_installed = {
-      "stylua",
-      "shfmt",
-      -- "flake8",
-    },
-  },
+  optional = true,
+  opts = function(_, opts)
+    opts.ensure_installed = opts.ensure_installed or { "stylua", "shfmt" }
+    vim.list_extend(opts.ensure_installed, { "codelldb" })
+  end,
   ---@param opts MasonSettings | {ensure_installed: string[]}
   config = function(_, opts)
     require("mason").setup(opts)

@@ -56,6 +56,22 @@ return {
     -- LSP Server Settings
     ---@type lspconfig.options
     servers = {
+      rust_analyzer = {},
+      taplo = {
+        keys = {
+          {
+            "K",
+            function()
+              if vim.fn.expand("%:t") == "Cargo.toml" and require("crates").popup_available() then
+                require("crates").show_popup()
+              else
+                vim.lsp.buf.hover()
+              end
+            end,
+            desc = "Show Crate Documentation",
+          },
+        },
+      },
       lua_ls = {
         -- mason = false, -- set to false if you don't want this server to be installed with mason
         -- Use this to add any additional keymaps
@@ -76,7 +92,6 @@ return {
           },
         },
       },
-      biome = {},
     },
     -- you can do any additional lsp server setup here
     -- return true if you don't want this server to be setup with lspconfig
@@ -89,7 +104,9 @@ return {
       -- end,
       -- Specify * to use this function as a fallback for any server
       -- ["*"] = function(server, opts) end,
-      --
+      rust_analyzer = function()
+        return true
+      end,
     },
   },
   ---@param opts PluginLspOpts

@@ -10,9 +10,11 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require("lazy").setup({
   spec = {
-    { "LazyVim/LazyVim",                                import = "lazyvim.plugins", opts = { colorscheme = "catppuccin" } },
-    { "neovim/nvim-lspconfig" },
-    { "williamboman/mason-lspconfig.nvim" },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins",
+      opts = { colorscheme = "catppuccin" },
+    },
     { import = "lazyvim.plugins.extras.coding.copilot" },
     { import = "lazyvim.plugins.extras.lang.go" },
     { import = "lazyvim.plugins.extras.lang.json" },

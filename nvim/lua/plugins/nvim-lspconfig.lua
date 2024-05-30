@@ -59,6 +59,36 @@ else
       -- LSP Server Settings
       ---@type lspconfig.options
       servers = {
+        biome = {},
+        vtsls = {
+          settings = {
+            vtsls = {},
+            javascript = {
+              format = {
+                enable = true,
+              },
+            },
+            typescript = {
+              format = {
+                enable = true,
+              },
+            },
+          },
+        },
+        tsserver = {
+          settings = {
+            javascript = {
+              format = {
+                enable = true,
+              },
+            },
+            typescript = {
+              format = {
+                enable = true,
+              },
+            },
+          },
+        },
         rust_analyzer = {},
         taplo = {
           keys = {

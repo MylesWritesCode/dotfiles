@@ -7,9 +7,14 @@ else
     keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
     build = ":MasonUpdate",
     optional = true,
-    opts = function(_, opts)
-      opts.ensure_installed = opts.ensure_installed or { "stylua", "shfmt" }
-      vim.list_extend(opts.ensure_installed, { "codelldb" })
+    opts = function()
+      return {
+        ensure_installed = {
+          "biome",
+          "rust-analyzer",
+          "typescript-language-server",
+        },
+      }
     end,
     ---@param opts MasonSettings | {ensure_installed: string[]}
     config = function(_, opts)

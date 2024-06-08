@@ -8,13 +8,24 @@ else
     build = ":MasonUpdate",
     optional = true,
     opts = function()
-      return {
+      local opts = {
         ensure_installed = {
           "biome",
+          "codelldb",
+          "delve",
+          "gofumpt",
+          "goimports",
+          "gomodifytags",
+          "hadolint",
+          "impl",
+          "markdown-toc",
+          "markdownlint",
           "rust-analyzer",
+          "sqlfluff",
           "typescript-language-server",
         },
       }
+      return opts
     end,
     ---@param opts MasonSettings | {ensure_installed: string[]}
     config = function(_, opts)

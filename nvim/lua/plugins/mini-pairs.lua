@@ -7,7 +7,7 @@ else
     opts = {
       mappings = {
         ["`"] = { action = "closeopen", pair = "``", neigh_pattern = "[^\\`].", register = { cr = false } },
-        ["'"] = { action = "closeopen", pair = "''", neigh_pattern = "[^%w<].", register = { cr = false } },
+        ["'"] = { action = "closeopen", pair = "''", neigh_pattern = "[^%w<&].", register = { cr = false } },
       },
     },
     keys = {

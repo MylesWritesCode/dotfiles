@@ -22,6 +22,9 @@ end
 set -gx PYENV_ROOT $HOME/.pyenv
 pyenv init - | source
 
+# zoxide, a better cd
+zoxide init fish | source
+
 # ld_library_path
 # @note looks like if this is set and we're also using ldconfig, some programs will fail to run
 # set -gx LD_LIBRARY_PATH /usr/local/cuda-12.4/lib64:/usr/local/lib/x86_64-linux-gnu:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu

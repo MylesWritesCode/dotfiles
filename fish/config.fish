@@ -23,7 +23,7 @@ set -gx PYENV_ROOT $HOME/.pyenv
 pyenv init - | source
 
 # zoxide, a better cd
-zoxide init fish | source
+zoxide init --cmd cd fish | source
 
 # ld_library_path
 # @note looks like if this is set and we're also using ldconfig, some programs will fail to run

@@ -70,6 +70,21 @@ else
         -- LSP Server Settings
         ---@type lspconfig.options
         servers = {
+          taplo = {
+            keys = {
+              {
+                "K",
+                function()
+                  if vim.fn.expand("%:t") == "Cargo.toml" and require("crates").popup_available() then
+                    require("crates").show_popup()
+                  else
+                    vim.lsp.buf.hover()
+                  end
+                end,
+                desc = "Show Crate Documentation",
+              },
+            },
+          },
           lua_ls = {
             -- mason = false, -- set to false if you don't want this server to be installed with mason
             -- Use this to add any additional keymaps
@@ -106,7 +121,7 @@ else
         -- return true if you don't want this server to be setup with lspconfig
         ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
         setup = {
-          rust_analyzer = function()
+          rust_analyzer = function(_, opts)
             return true
           end,
           -- example to setup with typescript.nvim

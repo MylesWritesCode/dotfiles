@@ -32,6 +32,16 @@ return {
               ["async-recursion"] = { "async_recursion" },
             },
           },
+          capabilities = {
+            textDocument = {
+              completion = {
+                completionItem = {
+                  -- Add snippets support.
+                  snippetSupport = false,
+                },
+              },
+            },
+          },
         },
       },
     },

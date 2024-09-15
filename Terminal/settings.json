@@ -6,11 +6,34 @@
         {
             "command": 
             {
+                "action": "moveFocus",
+                "direction": "left"
+            },
+            "keys": "alt+h"
+        },
+        {
+            "command": 
+            {
                 "action": "splitPane",
                 "split": "down",
                 "splitMode": "duplicate"
             },
             "keys": "ctrl+shift+minus"
+        },
+        {
+            "command": 
+            {
+                "action": "closeTab"
+            },
+            "keys": "ctrl+shift+w"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "right"
+            },
+            "keys": "alt+l"
         },
         {
             "command": "openTabRenamer",
@@ -48,21 +71,6 @@
         {
             "command": 
             {
-                "action": "closeTab"
-            },
-            "keys": "ctrl+shift+w"
-        },
-        {
-            "command": 
-            {
-                "action": "moveFocus",
-                "direction": "right"
-            },
-            "keys": "alt+l"
-        },
-        {
-            "command": 
-            {
                 "action": "moveFocus",
                 "direction": "down"
             },
@@ -74,14 +82,6 @@
                 "action": "newTab"
             },
             "keys": "ctrl+shift+t"
-        },
-        {
-            "command": 
-            {
-                "action": "moveFocus",
-                "direction": "left"
-            },
-            "keys": "alt+h"
         }
     ],
     "copyFormatting": "none",
@@ -108,11 +108,14 @@
             "experimental.retroTerminalEffect": false,
             "font": 
             {
-                "face": "FiraMono Nerd Font Mono",
-                "size": 10.0
+                "cellHeight": "1.4",
+                "face": "JetBrainsMono Nerd Font Mono",
+                "size": 10.0,
+                "weight": "normal"
             },
             "icon": "\ud83d\udef8",
-            "opacity": 80,
+            "opacity": 70,
+            "padding": "8",
             "scrollbarState": "hidden",
             "useAcrylic": true
         },
@@ -139,12 +142,6 @@
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Command Prompt"
-            },
-            {
-                "guid": "{5fb123f1-af88-5b5c-8953-d14a8def1978}",
-                "hidden": false,
-                "name": "PowerShell 7",
-                "source": "Windows.Terminal.PowershellCore"
             },
             {
                 "commandline": "\"C:\\Users\\Myles\\.cargo\\bin\\nu.exe\"",
@@ -457,49 +454,5 @@
             "yellow": "#F2A272"
         }
     ],
-    "themes": 
-    [
-        {
-            "name": "legacyDark",
-            "tab": 
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window": 
-            {
-                "applicationTheme": "dark",
-                "useMica": false
-            }
-        },
-        {
-            "name": "legacyLight",
-            "tab": 
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window": 
-            {
-                "applicationTheme": "light",
-                "useMica": false
-            }
-        },
-        {
-            "name": "legacySystem",
-            "tab": 
-            {
-                "background": null,
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "window": 
-            {
-                "applicationTheme": "system",
-                "useMica": false
-            }
-        }
-    ]
+    "themes": []
 }

@@ -1,6 +1,11 @@
 return {
   "folke/todo-comments.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },
+  keys = {
+    { "<leader>ctt", "<cmd>TodoTelescope<CR>", desc = "🔭 Telescope" },
+    { "<leader>ctq", "<cmd>TodoQuickFix<CR>", desc = "🚧 QuickFix" },
+    { "<leader>ctc", "<cmd>TodoQuickFix keywords=DELETEME,TODO<CR>", desc = "🧹 Cleanup Comments" },
+  },
   opts = {
     signs = true, -- show icons in the signs column
     sign_priority = 8, -- sign priority

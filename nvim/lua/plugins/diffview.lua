@@ -13,5 +13,10 @@ return {
       end,
       desc = "🔭 Open Diffview",
     },
+    {
+      "<leader>gdc",
+      "<cmd>DiffviewClose<cr>",
+      desc = "❌ Close Diffview",
+    },
   },
 }

@@ -1,9 +1,19 @@
-dlv/
-github-copilot/
-go/
-htop/
-nextjs-nodejs/
-ngrok/
-turborepo/
-create-next-app-nodejs/
+*
 
+Hyper/
+PowerShell/
+Terminal/
+VSCode/
+bottom/
+fish/
+home-manager/
+iterm2/
+lazygit/
+nix/
+nushell/
+nvim/
+oh-my-posh/
+starship/
+tabby/
+zellij/
+zsh/

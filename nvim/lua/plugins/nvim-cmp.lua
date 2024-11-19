@@ -13,7 +13,8 @@ return {
   },
   ---@param opts cmp.ConfigSchema
   opts = function(_, opts)
-    opts.sources = opts.sources or {}
-    table.insert(opts.sources, { name = "crates" })
+    opts.sources = vim.tbl_filter(function(v)
+      return not vim.tbl_contains({ "luasnip" }, v.name)
+    end, opts.sources)
   end,
 }

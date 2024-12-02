@@ -4,5 +4,5 @@ return {
     prefer_git = false,
     compilers = { "zig" },
   },
-  opts = { ensure_installed = { "rust", "ron" } },
+  opts = { ensure_installed = { "rust", "ron", "http", "graphql" } },
 }

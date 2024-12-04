@@ -255,7 +255,7 @@ theme "tokyo-night"
 // The name of the default layout to load on startup
 // Default: "default"
 //
-// default_layout "dev"
+default_layout "dev"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
@@ -317,7 +317,7 @@ copy_on_select true
 
 // The folder in which Zellij will look for layouts
 //
-layout_dir "$HOME/.config/zellij/layout"
+// layout_dir "$HOME/.config/zellij/layout"
 
 // The folder in which Zellij will look for themes
 //

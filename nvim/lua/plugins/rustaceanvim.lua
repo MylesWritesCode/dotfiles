@@ -30,6 +30,7 @@ return {
               -- ["async-trait"] = { "async_trait" },
               ["napi-derive"] = { "napi" },
               ["async-recursion"] = { "async_recursion" },
+              ["utoipauto"] = { "utoipauto" }, -- needed because utoipauto + rust-analyzer has a bug rn on the macro
             },
           },
         },

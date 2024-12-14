@@ -42,12 +42,12 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.vscode" },
     { import = "lazyvim.plugins.extras.util.rest" },
     { import = "plugins" },
+    { import = "themes" },
   },
   defaults = {
     lazy = false,
     version = false,
   },
-  install = { colorscheme = { "catppuccin" } },
   checker = {
     enabled = false,
     notify = false,

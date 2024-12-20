@@ -1,0 +1,5 @@
+[tools]
+go = "latest"
+python = "latest"
+ruby = "latest"
+"vfox:cmake" = "latest"

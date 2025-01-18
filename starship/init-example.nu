@@ -1,7 +1,6 @@
 # Run starship init nu | save -f init.nu to generate
-export-env { load-env {
+export-env { $env.STARSHIP_SHELL = "nu"; load-env {
     STARSHIP_CONFIG: "/Users/melllbby/dev/dotfiles/starship/starship.toml"
-    STARSHIP_SHELL: "nu"
     STARSHIP_SESSION_KEY: (random chars -l 16)
     PROMPT_MULTILINE_INDICATOR: (
         ^/Users/melllbby/.nix-profile/bin/starship prompt --continuation

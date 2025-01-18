@@ -1,3 +1,9 @@
 local
 history.txt
 
+config*
+env*
+
+!config.shared.nu
+!env.shared.nu
+

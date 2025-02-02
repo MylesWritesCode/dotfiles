@@ -118,11 +118,13 @@
             "font": 
             {
                 "cellHeight": "1.4",
-                "face": "JetBrainsMono Nerd Font Mono",
-                "size": 10,
+                "face": "OperatorMonoLig Nerd Font Mono",
+                "features": {},
+                "size": 12,
                 "weight": "normal"
             },
             "icon": "\ud83d\udef8",
+            "intenseTextStyle": "bold",
             "opacity": 70,
             "padding": "8",
             "scrollbarState": "hidden",

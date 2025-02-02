@@ -2,6 +2,7 @@ return {
   "catppuccin/nvim",
   lazy = true,
   name = "catppuccin",
+  priority = 1000,
   opts = {
     flavour = "macchiato",
     integrations = {
@@ -10,6 +11,7 @@ return {
       cmp = true,
       dashboard = true,
       flash = true,
+      fzf = true,
       grug_far = true,
       gitsigns = true,
       headlines = true,
@@ -40,6 +42,9 @@ return {
       treesitter = true,
       treesitter_context = true,
       which_key = true,
+    },
+    styles = {
+      comments = { "italic" }, -- make comments italic
     },
   },
 }

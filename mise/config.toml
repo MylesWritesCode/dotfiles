@@ -1,6 +1,7 @@
 [tools]
 go = "latest"
 java = "openjdk"
+node = "latest"
 python = "latest"
 ruby = "latest"
 "vfox:cmake" = "latest"

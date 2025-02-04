@@ -7,6 +7,15 @@
             "command": 
             {
                 "action": "moveFocus",
+                "direction": "left"
+            },
+            "id": "User.moveFocus.2A0DA8E0",
+            "keys": "alt+h"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
                 "direction": "right"
             },
             "id": "User.moveFocus.87C324ED",
@@ -19,15 +28,6 @@
             },
             "id": "User.closeTab.0",
             "keys": "ctrl+shift+w"
-        },
-        {
-            "command": 
-            {
-                "action": "moveFocus",
-                "direction": "left"
-            },
-            "id": "User.moveFocus.2A0DA8E0",
-            "keys": "alt+h"
         },
         {
             "command": "openTabRenamer",
@@ -94,8 +94,9 @@
         }
     ],
     "copyFormatting": "none",
-    "copyOnSelect": false,
+    "copyOnSelect": true,
     "defaultProfile": "{d2cb8296-78fb-4a54-a066-fbe9da3c0c85}",
+    "focusFollowMouse": true,
     "launchMode": "focus",
     "newTabMenu": 
     [

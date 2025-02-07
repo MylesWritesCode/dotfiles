@@ -1,8 +1,8 @@
 [tools]
+"vfox:cmake" = "latest"
 go = "latest"
 java = "openjdk"
 node = "latest"
 python = "latest"
 ruby = "latest"
-"vfox:cmake" = "latest"
 zig = "latest"

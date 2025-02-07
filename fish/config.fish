@@ -2,20 +2,6 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-# pyenv
-set -gx PYENV_ROOT $HOME/.pyenv
-pyenv init - | source
-
-# zoxide, a better cd
-zoxide init --cmd cd fish | source
-
-starship init fish | source
-
-# pnpm
-set -gx PNPM_HOME "/home/myles/.pnpm/pnpm"
-if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
-end
-# pnpm end
-
-mise activate fish | source
+zoxide init --cmd cd fish | source # zoxide, a better cd
+starship init fish | source # prettify the shell
+mise activate fish | source # tool manager

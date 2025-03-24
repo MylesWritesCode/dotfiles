@@ -3,7 +3,7 @@
 -- Add any additional options here
 
 -- vim.g.lazyvim_picker = "telescope"
-vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
+-- vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
 vim.g.snacks_animate = true
 
 local opt = vim.opt

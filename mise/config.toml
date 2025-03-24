@@ -3,6 +3,6 @@
 go = "latest"
 java = "openjdk"
 node = "latest"
-python = "latest"
+python = "3.12"
 ruby = "latest"
 zig = "latest"

@@ -50,8 +50,8 @@ return {
             name = "hf.co/unsloth/Qwen2.5-Coder-14B-Instruct-GGUF:Q4_K_M",
             -- name = "hf.co/bartowski/Qwen_QwQ-32B-GGUF:Q4_K_M",
             env = {
-              flash_attention = "true",
-              kv_cache_type = "f16",
+              -- flash_attention = "true",
+              -- kv_cache_type = "f16",
             },
             schema = {
               model = {

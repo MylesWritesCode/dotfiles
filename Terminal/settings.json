@@ -6,11 +6,9 @@
         {
             "command": 
             {
-                "action": "moveFocus",
-                "direction": "left"
+                "action": "newTab"
             },
-            "id": "User.moveFocus.2A0DA8E0",
-            "keys": "alt+h"
+            "id": "User.newTab.5DEADB41"
         },
         {
             "command": 
@@ -18,21 +16,15 @@
                 "action": "moveFocus",
                 "direction": "right"
             },
-            "id": "User.moveFocus.87C324ED",
-            "keys": "alt+l"
+            "id": "User.moveFocus.87C324ED"
         },
         {
             "command": 
             {
-                "action": "closeTab"
+                "action": "moveFocus",
+                "direction": "up"
             },
-            "id": "User.closeTab.0",
-            "keys": "ctrl+shift+w"
-        },
-        {
-            "command": "openTabRenamer",
-            "id": "User.openTabRenamer",
-            "keys": "ctrl+shift+r"
+            "id": "User.moveFocus.6CD791B"
         },
         {
             "command": 
@@ -41,8 +33,22 @@
                 "split": "down",
                 "splitMode": "duplicate"
             },
-            "id": "User.splitPane.10B260D2",
-            "keys": "ctrl+shift+minus"
+            "id": "User.splitPane.10B260D2"
+        },
+        {
+            "command": 
+            {
+                "action": "closeTab"
+            },
+            "id": "User.closeTab.0"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "left"
+            },
+            "id": "User.moveFocus.2A0DA8E0"
         },
         {
             "command": 
@@ -51,37 +57,11 @@
                 "split": "right",
                 "splitMode": "duplicate"
             },
-            "id": "User.splitPane.FEF0D40B",
-            "keys": "ctrl+shift+plus"
+            "id": "User.splitPane.FEF0D40B"
         },
         {
-            "command": 
-            {
-                "action": "moveFocus",
-                "direction": "up"
-            },
-            "id": "User.moveFocus.6CD791B",
-            "keys": "alt+k"
-        },
-        {
-            "command": "unbound",
-            "keys": "win+`"
-        },
-        {
-            "command": "unbound",
-            "keys": "f11"
-        },
-        {
-            "command": "unbound",
-            "keys": "shift+insert"
-        },
-        {
-            "command": 
-            {
-                "action": "newTab"
-            },
-            "id": "User.newTab.5DEADB41",
-            "keys": "ctrl+shift+t"
+            "command": "openTabRenamer",
+            "id": "User.openTabRenamer"
         },
         {
             "command": 
@@ -89,14 +69,64 @@
                 "action": "moveFocus",
                 "direction": "down"
             },
-            "id": "User.moveFocus.F747588A",
-            "keys": "alt+j"
+            "id": "User.moveFocus.F747588A"
         }
     ],
     "copyFormatting": "none",
     "copyOnSelect": true,
     "defaultProfile": "{d2cb8296-78fb-4a54-a066-fbe9da3c0c85}",
     "focusFollowMouse": true,
+    "keybindings": 
+    [
+        {
+            "id": "User.moveFocus.6CD791B",
+            "keys": "alt+k"
+        },
+        {
+            "id": "User.moveFocus.87C324ED",
+            "keys": "alt+l"
+        },
+        {
+            "id": "User.closeTab.0",
+            "keys": "ctrl+shift+w"
+        },
+        {
+            "id": "User.moveFocus.2A0DA8E0",
+            "keys": "alt+h"
+        },
+        {
+            "id": "User.openTabRenamer",
+            "keys": "ctrl+shift+r"
+        },
+        {
+            "id": "User.splitPane.10B260D2",
+            "keys": "ctrl+shift+minus"
+        },
+        {
+            "id": "User.splitPane.FEF0D40B",
+            "keys": "ctrl+shift+plus"
+        },
+        {
+            "id": null,
+            "keys": "win+`"
+        },
+        {
+            "id": null,
+            "keys": "f11"
+        },
+        {
+            "id": null,
+            "keys": "shift+insert"
+        },
+        {
+            "id": "User.newTab.5DEADB41",
+            "keys": "ctrl+shift+t"
+        },
+        {
+            "id": "User.moveFocus.F747588A",
+            "keys": "alt+j"
+        }
+    ],
     "launchMode": "focus",
     "newTabMenu": 
     [
@@ -121,7 +151,7 @@
                 "cellHeight": "1.4",
                 "face": "OperatorMonoLig Nerd Font Mono",
                 "features": {},
-                "size": 12,
+                "size": 10,
                 "weight": "normal"
             },
             "icon": "\ud83d\udef8",

@@ -4,6 +4,7 @@ import = ["./themes/catppuccin-mocha.toml"]
 [window]
 decorations = "None"
 opacity = 0.90
+option_as_alt = "OnlyLeft"
 padding = { x = 8, y = 0 }
 
 [font]

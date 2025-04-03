@@ -5,13 +5,13 @@ return {
   priority = 1000,
   opts = {
     flavour = "macchiato",
+    transparent_background = true,
     integrations = {
       aerial = true,
       alpha = true,
       cmp = true,
       dashboard = true,
       flash = true,
-      fzf = true,
       grug_far = true,
       gitsigns = true,
       headlines = true,

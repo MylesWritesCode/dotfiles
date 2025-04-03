@@ -4,7 +4,7 @@ import = ["./themes/catppuccin-mocha.toml"]
 [window]
 decorations = "None"
 opacity = 0.8
-padding = { x = 4, y = 0 }
+padding = { x = 8, y = 0 }
 
 [font]
 normal = { family = "OperatorMonoLig Nerd Font Mono", style = "Regular" }

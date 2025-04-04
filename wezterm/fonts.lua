@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 
 local module = {}
 
-function module.apply_fonts(config)
+function module.apply(config)
 	config.font = wezterm.font("Operator Mono", { weight = "DemiLight", stretch = "Normal", style = "Normal" })
 
 	config.font_rules = {

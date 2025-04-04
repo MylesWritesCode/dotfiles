@@ -1,5 +1,6 @@
 local wezterm = require("wezterm")
 local fonts = require("fonts")
+local private = require("private")
 
 local config = {
 	font_size = 12.0,
@@ -12,7 +13,8 @@ local config = {
 	window_background_opacity = 0.95,
 }
 
-fonts.apply_fonts(config)
+fonts.apply(config)
+private.apply(config)
 
 local bar = wezterm.plugin.require("https://github.com/adriankarlen/bar.wezterm")
 bar.apply_to_config(config)

@@ -1,7 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-$os\
+$os \
 $all\
 $character\
 """
@@ -33,12 +33,11 @@ symbol = " "
 home_symbol = "\uf015"
 read_only = " 󰌾"
 format = "[$path]($style)[$read_only]($read_only_style) "
-style = "fg:#c397d8 bold"
+style = "fg:#c397d8"
 
 [docker_context]
 symbol = " "
 disabled = true
-
 
 [elixir]
 symbol = " "

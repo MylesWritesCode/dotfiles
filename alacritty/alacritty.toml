@@ -11,6 +11,11 @@ option_as_alt = "OnlyLeft"
 padding = { x = 8, y = 0 }
 
 [font]
-normal = { family = "OperatorMonoLig Nerd Font Mono", style = "Regular" }
-italic = { family = "OperatorMonoLig Nerd Font Mono", style = "Italic" }
+# normal = { family = "OperatorMonoLig Nerd Font Mono", style = "Regular" }
+# italic = { family = "OperatorMonoLig Nerd Font Mono", style = "Italic" }
 offset = { x = 1, y = 2 }
+
+# wezterm.font("OperatorMonoLig Nerd Font Mono", {weight="Light", stretch="Normal", style="Normal"}) -- C:\USERS\MYLES\APPDATA\LOCAL\MICROSOFT\WINDOWS\FONTS\OPERATORMONOLIGNERDFONTMONO-LIGHT.OTF, DirectWrite
+# wezterm.font("OperatorMonoLig Nerd Font Mono", {weight="Light", stretch="Normal", style="Italic"}) -- (AKA: OperatorMonoLig Nerd Font Mono Light) C:\USERS\MYLES\APPDATA\LOCAL\MICROSOFT\WINDOWS\FONTS\OPERATORMONOLIGNERDFONTMONO-LIGHTITALIC.OTF, DirectWrite
+# wezterm.font("OperatorMonoLig Nerd Font Mono", {weight=325, stretch="Normal", style="Normal"}) -- C:\USERS\MYLES\APPDATA\LOCAL\MICROSOFT\WINDOWS\FONTS\OPERATORMONOLIGNERDFONTMONO-REGULAR.OTF, DirectWrite
+# wezterm.font("OperatorMonoLig Nerd Font Mono", {weight=325, stretch="Normal", style="Italic"}) -- C:\USERS\MYLES\APPDATA\LOCAL\MICROSOFT\WINDOWS\FONTS\OPERATORMONOLIGNERDFONTMONO-ITALIC.OTF, DirectWrite

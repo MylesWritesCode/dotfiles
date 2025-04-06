@@ -3,7 +3,7 @@
 -- Add any additional options here
 
 -- vim.g.lazyvim_picker = "telescope"
-vim.g.lazyvim_rust_diagnostics = "bacon-ls"
+-- vim.g.lazyvim_rust_diagnostics = "bacon-ls"
 vim.g.snacks_animate = false
 
 local opt = vim.opt

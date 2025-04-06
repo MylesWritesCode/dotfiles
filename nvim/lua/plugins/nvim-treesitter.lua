@@ -44,7 +44,7 @@ return {
       "query",
       "regex",
       "ron",
-      "rust",
+      -- "rust",
       "toml",
       "tsx",
       "typescript",

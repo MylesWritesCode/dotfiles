@@ -1,0 +1,7 @@
+[tools]
+chezmoi = "latest"
+node = "latest"
+"npm:mcp-hub" = "latest"
+"pipx:vectorcode" = { version = "latest", lsp = "", mcp = "" }
+python = "latest"
+uv = "latest"

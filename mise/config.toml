@@ -1,8 +1,0 @@
-[tools]
-"vfox:cmake" = "latest"
-go = "latest"
-java = "openjdk"
-node = "latest"
-python = "3.12"
-ruby = "latest"
-zig = "latest"

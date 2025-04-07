@@ -3,13 +3,16 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim", -- Required for Job and HTTP requests
   },
-  -- cmd = "MCPHub", -- lazily start the hub when `MCPHub` is called
+  cmd = "MCPHub", -- lazily start the hub when `MCPHub` is called
   build = "npm install -g mcp-hub@latest", -- Installs required mcp-hub npm module
+  -- build = "bundled_build.lua",
   config = function()
     require("mcphub").setup({
       -- Required options
       port = 65501, -- Port for MCP Hub server
-      config = vim.fn.expand("<script>:h") .. "/lua/plugins/mcphub.json",
+      config = (vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1)
+          and vim.fn.expand("~\\.config\\nvim") .. "\\lua\\plugins\\mcphub.json"
+        or vim.fn.expand("<script>:p:h") .. "/lua/plugins/mcphub.json",
 
       -- Optional options
       on_ready = function(hub)
@@ -31,6 +34,7 @@ return {
           make_slash_commands = true,
         },
       },
+      use_bundled_binary = false,
     })
   end,
 }

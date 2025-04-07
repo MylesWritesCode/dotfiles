@@ -22,7 +22,7 @@ return {
       },
       strategies = {
         chat = {
-          adapter = "ollama",
+          adapter = "openai",
           tools = {
             ["mcp"] = {
               callback = require("mcphub.extensions.codecompanion"),
@@ -34,10 +34,10 @@ return {
           },
         },
         inline = {
-          adapter = "ollama",
+          adapter = "openai",
         },
         agent = {
-          adapter = "ollama",
+          adapter = "openai",
         },
       },
       adapters = {
@@ -71,6 +71,13 @@ return {
               num_predict = {
                 default = -1,
               },
+            },
+          })
+        end,
+        openai = function()
+          return require("codecompanion.adapters").extend("openai", {
+            env = {
+              api_key = "cmd:op read op://Work/OpenAI/credential --no-newline",
             },
           })
         end,

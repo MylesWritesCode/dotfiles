@@ -9,7 +9,7 @@ return {
     require("mcphub").setup({
       -- Required options
       port = 65501, -- Port for MCP Hub server
-      config = vim.fn.expand("~/mcpservers.json"), -- Absolute path to config file
+      config = vim.fn.expand("<script>:h") .. "/lua/plugins/mcphub.json",
 
       -- Optional options
       on_ready = function(hub)
@@ -23,6 +23,13 @@ return {
         to_file = false,
         file_path = nil,
         prefix = "MCPHub",
+      },
+      extensions = {
+        codecompanion = {
+          show_result_in_chat = true,
+          make_vars = true,
+          make_slash_commands = true,
+        },
       },
     })
   end,

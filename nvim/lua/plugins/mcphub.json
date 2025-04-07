@@ -1,0 +1,36 @@
+{
+  "mcpServers": {
+    "sequential-thinking": {
+      "command": "pnpm",
+      "args": [
+        "dlx",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    },
+    "fetch": {
+      "command": "uvenv",
+      "args": [
+        "run",
+        "mcp-server-fetch"
+      ]
+    },
+    "vectorcode-mcp-server": {
+      "command": "vectorcode-mcp-server",
+      "args": []
+    },
+    "time": {
+      "command": "uvenv",
+      "args": [
+        "run",
+        "mcp-server-time"
+      ]
+    },
+    "ollama": {
+      "command": "uvenv",
+      "args": [
+        "run",
+        "mcp-ollama"
+      ]
+    }
+  }
+}

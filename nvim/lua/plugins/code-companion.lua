@@ -22,7 +22,7 @@ return {
       },
       strategies = {
         chat = {
-          adapter = "openai",
+          adapter = "copilot",
           tools = {
             ["mcp"] = {
               callback = require("mcphub.extensions.codecompanion"),
@@ -78,6 +78,20 @@ return {
           return require("codecompanion.adapters").extend("openai", {
             env = {
               api_key = "cmd:op read op://Work/OpenAI/credential --no-newline",
+            },
+            schema = {
+              model = {
+                default = "gpt-4o",
+              },
+            },
+          })
+        end,
+        copilot = function()
+          return require("codecompanion.adapters").extend("copilot", {
+            schema = {
+              model = {
+                default = "gpt-4o",
+              },
             },
           })
         end,

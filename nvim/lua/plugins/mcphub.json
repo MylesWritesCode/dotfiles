@@ -8,9 +8,8 @@
       ]
     },
     "fetch": {
-      "command": "uvenv",
+      "command": "uvx",
       "args": [
-        "run",
         "mcp-server-fetch"
       ]
     },
@@ -19,16 +18,14 @@
       "args": []
     },
     "time": {
-      "command": "uvenv",
+      "command": "uvx",
       "args": [
-        "run",
         "mcp-server-time"
       ]
     },
     "ollama": {
-      "command": "uvenv",
+      "command": "uvx",
       "args": [
-        "run",
         "mcp-ollama"
       ]
     }

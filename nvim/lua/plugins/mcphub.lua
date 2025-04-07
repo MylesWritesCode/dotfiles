@@ -1,3 +1,14 @@
+local function get_config()
+  local path
+  if vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
+    path = vim.fn.expand("~\\.config\\nvim") .. "\\lua\\plugins\\mcphub.json"
+  elseif vim.fn.has("mac") == 1 then
+    path = vim.fn.expand("~/.config/nvim") .. "/lua/plugins/mcphub.json"
+  else
+    path = vim.fn.expand("<script>:p:h") .. "/lua/plugins/mcphub.json"
+  end
+  return path
+end
 return {
   "ravitemer/mcphub.nvim",
   dependencies = {
@@ -10,9 +21,7 @@ return {
     require("mcphub").setup({
       -- Required options
       port = 65501, -- Port for MCP Hub server
-      config = (vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1)
-          and vim.fn.expand("~\\.config\\nvim") .. "\\lua\\plugins\\mcphub.json"
-        or vim.fn.expand("<script>:p:h") .. "/lua/plugins/mcphub.json",
+      config = get_config(),
 
       -- Optional options
       on_ready = function(hub)
